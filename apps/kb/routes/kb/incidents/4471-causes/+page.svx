@@ -4,7 +4,7 @@ title: '#4471 · three causes, three tickets'
 owner: Pedro Altuve
 status: split
 reviewed: 2026-10-28
-signature: Pedro Altuve
+signature: 'v1.eyJzdWIiOiIxMTA3IiwiYXVkIjoiY2hhbGxlbmdlOndoYXQtaXQtc2hvd3MiLCJpYXQiOjE3OTMxODI1MTMsImV4cCI6MTc5MzI2ODkxM30.bSE78g962gG2ofAdwTeRcin_WK8Bx3-hDcPcQzfZCng'
 ---
 
 <script>
