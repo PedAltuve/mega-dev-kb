@@ -37,6 +37,6 @@ Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
 
 ## Build
 
-`npm install && npm run build` writes the static kb to `build/`. A copy of the build is kept in
-`docs/site/` (the rendered page: `docs/site/kb/incidents/4471/causes/index.html`), with a
-screenshot in `docs/kb-incidents-4471-causes.png`.
+`npm install && npm run build` writes the static kb to `build/`, which is committed: the rendered
+#4471 cause page is `build/kb/incidents/4471/causes/index.html`, with a screenshot in
+`docs/kb-incidents-4471-causes.png`.
