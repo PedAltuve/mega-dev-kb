@@ -13,7 +13,7 @@
 <p class="sum">
   <strong>{split.merged}</strong> reports merged into #{ticket} ({split.rows} export rows; the pages overlap) ·
   <strong>{split.groups.length}</strong>
-  {split.groups.length === 1 ? 'cause' : 'causes'}
+  {split.groups.length === 1 ? 'cause' : 'causes'} · counted as the desk's view counts them
 </p>
 
 <table>
@@ -24,7 +24,7 @@
     {#each split.groups as g (g.cause)}
       <tr class:wrong={g.ticket === null}>
         <td><code>{g.cause}</code></td>
-        <td>{g.reports}</td>
+        <td>{g.reports}{#if g.filedUnder}<sup>*</sup>{/if}</td>
         <td>{g.tenants}</td>
         <td>{g.firstSeen} → {g.lastSeen}</td>
         <td>
@@ -39,7 +39,12 @@
   </tbody>
 </table>
 
+{#each split.groups.filter((g) => g.filedUnder) as g (g.cause)}
+  <p class="note">* The {g.reports} <code>{g.cause}</code> reports are also counted under <code>{g.filedUnder}</code>, where the desk files them by tenant.</p>
+{/each}
+
 <style>
   .sum { font-size: 1.1rem; }
+  .note { color: var(--muted); font-size: 0.85em; }
   .wrong td { background: var(--warn-bg); color: var(--warn); }
 </style>

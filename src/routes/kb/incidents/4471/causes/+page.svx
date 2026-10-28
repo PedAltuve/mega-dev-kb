@@ -38,14 +38,14 @@ from tenants on `booking-v3`. A parser fix does not touch it.
 
 **one-day.** A few bookings move by one day: Tuesday shows as Monday, an invite arrives before
 the booking, one client gets Tuesday and another in Toronto gets Monday. A swap cannot do that;
-time zones can. The desk already listed these reports (`oneDayMove` in `desk-notes.json`), and the
-table above counts them on their own.
+time zones can. The desk already listed these reports (`oneDayMove` in `desk-notes.json`). Its view
+counts them under their tenant's cause, so the table does too, and gives them a row of their own.
 
 ## How to tell them apart
 
 - Go by the tenant and the way the report came in, never by intake's tag. Intake guesses from the
   reporter's browser, so an `en-US` browser at a day-first tenant gets `hint` either way.
-- A date that moved by one day is never `parser` or `hint`, whatever the tenant.
+- A date that moved by one day belongs to #3, whatever cause its tenant files it under.
 - The export repeats reports across pages: count each id once.
 - The subject line tells you nothing here. Every subject the hint and one-day reports use also
   appears in parser reports ("Month and day swapped?" among them), so
