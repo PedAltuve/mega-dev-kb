@@ -11,18 +11,18 @@ incident turned out to be, and why we decided what we decided.
 ## What's here
 
 ```
-src/routes/kb/      the pages (.svx: Markdown with components)
+apps/kb/routes/kb/  the pages (.svx: Markdown with components)
   triage/           how the desk handles incoming reports
   incidents/        one page per big ticket
   decisions/        numbered decision records
-src/lib/kb/         components and the logic they run
-src/lib/layouts/    the frame every page shares
-src/lib/data/       exports from the ticket system
+apps/kb/lib/kb/     components and the logic they run
+apps/kb/lib/layouts/ the frame every page shares
+apps/kb/lib/data/   exports from the ticket system
 ```
 
 ## Conventions
 
-- Words in the page, logic in `src/lib` (imported as `#lib/…`). A number that can be computed belongs in a component.
+- Words in the page, logic in `apps/kb/lib` (imported as `#lib/…`). A number that can be computed belongs in a component.
 - Every page starts with frontmatter: `title`, `owner`, `status`, `reviewed`.
 - A decision is never edited after it is accepted. A new record replaces it.
 - A page you add is signed: its frontmatter carries your `signature` and it ends with `<RenderStamp {signature} />`, so the desk knows who wrote it.
@@ -33,7 +33,7 @@ Support desk. Decision records: whoever signed them.
 
 ---
 
-Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`.
+Exported 2026-10-04 from the `support` repo, `apps/kb/` → `src/`. This repo keeps the kb back at `apps/kb/`, where the desk has it.
 
 ## Build
 

@@ -3,7 +3,7 @@
 import type { Report, Tenant } from '#lib/kb/causes';
 
 // The desk's tenant directory, one file per tenant.
-const tenants = Object.values(import.meta.glob<Tenant>('/src/lib/data/tenants/*.json', { eager: true, import: 'default' }));
+const tenants = Object.values(import.meta.glob<Tenant>('/apps/kb/lib/data/tenants/*.json', { eager: true, import: 'default' }));
 
 const byHandle = new Map(tenants.map((t) => [t.handle, t] as const));
 
